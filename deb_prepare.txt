@@ -4,6 +4,7 @@ On SD Card there is clean Debian 7 Wheezy, and some improvements:
 
 * /tmp is mounted on tmpfs (RAM) to speed up and carry on card
 * kernel and libc and openssh is HOLD in aptitude to prevent from segfaults in pthread.so when updating system
+* card 2GB image has 3 partitions on it (as in pictures/sd_card_partition.png)
 
 What you (as teacher with stidens) can do is:
 
