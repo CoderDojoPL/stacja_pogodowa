@@ -3,6 +3,9 @@ How to prepare Debian on sd card.
 
 You need 2GB SD card, best is Class 10.
 The system is prepared as IMG file, which is RAW image of SD CARD (2GB). 
+Image is avaible at: http://j.mp/galileo-debian-img
+MD5 sum is avaible at: http://j.mp/galileo-debian-md5
+
 This guide is based on Debian Ubuntu 12.04 LTS, the same can be done with MS-Windows, but it is over the scope of this documentation.
 The Ubuntu is FREE Software avaible for everyone. In this case we use special flavour/remix called FREE_Desktop avaible for polish education on http://j.mp/FREE_Desktop
 
