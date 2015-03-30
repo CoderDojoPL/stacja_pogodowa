@@ -4,12 +4,59 @@ On SD Card there is clean Debian 7 Wheezy, and some improvements:
 
 * /tmp is mounted on tmpfs (RAM) to speed up and carry on card
 * kernel and libc and openssh is HOLD in aptitude to prevent from segfaults in pthread.so when updating system
+
+After this, the system uses about 35 of 256 of RAM
+
+root@coderdojo-galileo:~# free -m
+             total       used       free     shared    buffers     cached
+Mem:           226         33        193          0          2         18
+-/+ buffers/cache:         12        214
+Swap:            0          0          0
+
+
+
 * card 2GB image has 3 partitions on it (as in pictures/sd_card_partition.png)
+
+                                GNU cfdisk 1.2.4
+
+                                    SD SD02G
+        Disk: /dev/mmcblk0   Disk type: gpt    Size: 1967128575B, 1967MB
+              Heads: 255   Sectors per track: 63   Cylinders: 239
+
+   Number   Flags      Part Type   Filesystem        Label                Size
+ ------------------------------------------------------------------------------
+      1     Bootable   Primary     fat16                                  100MB
+      2                Primary     ext3                                  1600MB
+      3                Primary     ext3                                   266MB
+                       Primary     Free space                            1.03MB
+
+
+Special files for partitions on /dev subsystem:
+
+brw-rw---T 1 root floppy 179, 0 mar 30 18:36 /dev/mmcblk0
+brw-rw---T 1 root floppy 179, 1 sty  1  2001 /dev/mmcblk0p1
+brw-rw---T 1 root floppy 179, 2 sty  1  2001 /dev/mmcblk0p2
+brw-rw---T 1 root floppy 179, 3 sty  1  2001 /dev/mmcblk0p3
+
 
 What you (as teacher with stidens) can do is:
 
 * change the name of system ( vim /etc/hostname )
 * make another partition on SD CARD mount in somewhere, in example /opt ( vim /etc/fstab )
+
+After that operation you will have additional space for data (ex. rrd files in /opt)
+
+root@coderdojo-galileo:~# df -h
+System plików  rozm. użyte dost. %uż. zamont. na
+rootfs          1,5G  480M  949M  34% /
+udev             10M     0   10M   0% /dev
+tmpfs            23M  108K   23M   1% /run
+/dev/mmcblk0p2  1,5G  480M  949M  34% /
+tmpfs           5,0M     0  5,0M   0% /run/lock
+tmpfs            46M     0   46M   0% /run/shm
+tmpfs           114M     0  114M   0% /tmp
+/dev/mmcblk0p3  246M  6,1M  228M   3% /opt
+
 
 What you must do is:
 
