@@ -1,0 +1,16 @@
+A note on system that is installed on sd-card.
+
+On SD Card there is clean Debian 7 Wheezy, and some improvements:
+
+* /tmp is mounted on tmpfs (RAM) to speed up and carry on card
+* kernel and libc and openssh is HOLD in aptitude to prevent from segfaults in pthread.so when updating system
+
+What you (as teacher with stidens) can do is:
+
+* change the name of system ( vim /etc/hostname )
+* make another partition on SD CARD mount in somewhere, in example /opt ( vim /etc/fstab )
+
+What you must do is:
+
+* install all neccesary software for our project ( deb_install.sh )
+
