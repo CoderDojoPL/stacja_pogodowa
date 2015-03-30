@@ -3,7 +3,7 @@ How to prepare Debian on sd card.
 
 You need 2GB SD card, best is Class 10.
 The system is prepared as IMG file, which is RAW image of SD CARD (2GB). 
-Image is avaible at: http://j.mp/galileo-debian-img
+Image is avaible at: http://j.mp/galileo-debian-img  (about 0,6 GB file)
 MD5 sum is avaible at: http://j.mp/galileo-debian-md5
 
 This guide is based on Debian Ubuntu 12.04 LTS, the same can be done with MS-Windows, but it is over the scope of this documentation.
@@ -29,3 +29,4 @@ adasiek@adasiek-ThinkPad-X200:$ sudo dd if=debian-coderdojo-clean.img of /dev/sd
 You can also make this steps using GUI tools, steps (screenshots) are included. 
 
 After this you should have got working debian distro named coderdojo-galileo on SD card.
+( the boot process : https://www.youtube.com/watch?v=sMp18cqSXvc )
