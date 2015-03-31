@@ -1,3 +1,11 @@
 Software installing  and configuring on Debian
 
 In mc in Option menu change autoindent and using internal editor (on)
+
+mcedit will be defailt text editor for python scripts, or JED - this should every student choose themself.
+
+Eventually Geany can be installed (apt-get install geany), but this is X11-Window application,
+so can be more RAM depedent (gets more resources from system), and to use it, student must use Linux machine and access to Galileo with command:
+ssh -C root@_galileo_ip_ -X -Y (refer to ssh manual fore more info about tjis 2 options).
+
+
