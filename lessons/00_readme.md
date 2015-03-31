@@ -6,7 +6,7 @@ Lessons fo our project:
 
 2) Debian installation on SD CARD
 
-3) Software installing on Debian
+3) Software installing and configuring on Debian
 
 4) Simple LED connections on Board
 

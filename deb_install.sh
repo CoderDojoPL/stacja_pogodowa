@@ -11,7 +11,7 @@ apt-get install python-pip python-flask ipython rrdtool python-rrdtool git
 # webserver package
 apt-get install lighttpd 
 # system specyfic packages
-apt-get install tree htop iftop iptraf vim-nox
+apt-get install tree htop iftop iptraf vim-nox joe
 #
 
 
