@@ -62,3 +62,4 @@ What you must do is:
 
 * install all neccesary software for our project ( deb_install.sh )
 
+* install pyGalileo library ( pygalileo_install.sh )

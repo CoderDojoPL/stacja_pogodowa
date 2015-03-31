@@ -4,7 +4,14 @@
 #
 # all commands with packages needed to be installed on the system to work.
 #
-apt-get install mc vim python-pip ipython lighttpd htop iftop iptraf rrdtool
-
+apt-get update
+# remember to answer T (Yes) to install additional packages, which are needed
+# python specific packages 
+apt-get install python-pip python-flask ipython rrdtool python-rrdtool git
+# webserver package
+apt-get install lighttpd 
+# system specyfic packages
+apt-get install tree htop iftop iptraf vim-nox
+#
 
 
