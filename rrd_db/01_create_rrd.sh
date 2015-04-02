@@ -60,7 +60,8 @@ echo "Creating set of RRD database in one file
 
 rrdtool create  ${DB} \
   --step 300 \
-  DS:temperature:GAUGE:600:-44:85 \
+  DS:temperature:GAUGE:1200:-44:155 \
+  DS:photoresistor:GAUGE:1200:0:1100 \
   RRA:AVERAGE:0.5:1:288 \
   RRA:AVERAGE:0.5:3:672 \
   RRA:AVERAGE:0.5:12:744 \
@@ -73,7 +74,7 @@ then
     exit 0
 else
     echo " "
-    echo " --> Warning: file ${DB} exist. Delete it manually first."
+    echo " --> Warning: file ${DB} does not exist. Some error......"
     exit 1
 fi
 

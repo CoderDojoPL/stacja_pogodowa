@@ -13,5 +13,22 @@ apt-get install lighttpd
 # system specyfic packages
 apt-get install tree htop iftop iptraf vim-nox joe
 #
-
-
+# creating necessary lighttpd configuration, directories and change ownership to satisfy lighttpd
+# students can do it manually from hand or just execute this script
+# it is up to teacher ;-)
+mkdir -p /var/www/cgi-bin
+chown www-data.www-data /var/www/ -R
+chmod g+w /var/www/ -R
+cd /etc/lighttpd/conf-enabled
+ln -s ../conf-available/10-cgi.conf
+ln -s ../conf-available/10-rrdtool.conf
+ln -s ../conf-available/10-status.conf
+cd /
+echo "Lighttpd features enabled..."
+# 
+cd /root
+echo "wiring-x86 python library for coderdojo library"
+git clone https://github.com/emutex/wiring-x86.git
+cd wiring-x86.git
+python setup.py install
+echo "done."

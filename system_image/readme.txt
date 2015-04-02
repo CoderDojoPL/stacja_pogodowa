@@ -1,6 +1,10 @@
 How to prepare Debian on sd card.
 =================================
 
+First of all, update firmware to 1.0.4
+https://downloadcenter.intel.com/download/24748
+
+
 You need 2GB SD card, best is Class 10.
 The system is prepared as IMG file, which is RAW image of SD CARD (2GB). 
 Image is avaible at: http://j.mp/galileo-debian-img  (about 0,6 GB file)
