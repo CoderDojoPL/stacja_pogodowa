@@ -7,7 +7,7 @@
 apt-get update
 # remember to answer T (Yes) to install additional packages, which are needed
 # python specific packages 
-apt-get install python-pip python-flask ipython rrdtool python-rrdtool git
+apt-get install python-pip python-flask ipython rrdtool python-rrdtool git python-smbus
 # webserver package
 apt-get install lighttpd 
 # system specyfic packages
@@ -32,3 +32,5 @@ git clone https://github.com/emutex/wiring-x86.git
 cd wiring-x86.git
 python setup.py install
 echo "done."
+echo "python JSON-RPC library"
+pip install python-jsonrpc

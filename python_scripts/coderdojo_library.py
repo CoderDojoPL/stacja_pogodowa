@@ -44,15 +44,19 @@ class CoderDojoGalileo(object):
 		self.board = GPIO()
 		self.pin_temperature = 14     # A0
 		self.pin_photoresistor = 15   # A1
-		self.pin_uvout = 16			  # A2
-		self.pin_reference3v = 17	  # A3
+		self.pin_uvout = 16			  # A2 - DA
+		self.pin_reference3v = 17	  # A3 - DL
+		self.pin_bmpsda = 18		  # A4 - DA
+		self.pin_bmpsdl = 19		  # A5 - DL
 		self.pin_digital_A = 4
 		self.pin_digital_B = 7
 		self.pin_digital_C = 8
 		self.temperature = 0
 		self.raw_temperature = 0 # in mV
 		self.photoresistor = 0
-		self.uvforcm = 0 # UV/cm2
+		self.uvIntensity = 0 # UV/cm2
+		self.bmp180_temperature = 0
+		self.bmp180_pressure = 0
 		# now we will set all analog pins as INPUT
 		for pinA in range(14,20):
 			self.board.pinMode(pinA, self.board.ANALOG_INPUT)
@@ -60,8 +64,7 @@ class CoderDojoGalileo(object):
 		for pinX in range(1,14):
 			self.board.pinMode(pinX, self.board.OUTPUT)
 			self.board.digitalWrite(pinX, self.board.LOW)
-		
-		
+			
 	def ledA_ON(self):
 		self.board.digitalWrite(self.pin_digital_A, self.board.HIGH)
 		
@@ -97,7 +100,38 @@ class CoderDojoGalileo(object):
 	def getLastPhotoresistor(self):
 		return self.photoresistor
 		
+	def getUVIndex(self):
 		
+		def averageAnalogRead(pin,avg=9):
+			read_value = 0
+			for read in range(1,avg):
+				read_value += self.board.analogRead(pin)
+			return float(read_value/avg)
+		
+		def mapfloat(x, in_min, in_max, out_min, out_max):
+			#special function to compute UV Index
+			return float((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
+		
+		uvLevel = averageAnalogRead(self.pin_uvout)
+		refLevel = averageAnalogRead(self.pin_reference3v)
+		# Use the 3.3V power pin as a reference to get a very accurate output value from sensor
+		outputVoltage = 3.3 / refLevel * uvLevel
+		# Convert the voltage to a UV intensity level
+		# based on information from tutorial:
+		# https://learn.sparkfun.com/tutorials/ml8511-uv-sensor-hookup-guide/using-the-ml8511
+		self.uvIntensity = mapfloat(outputVoltage, 0.99, 2.8, 0.0, 15.0)  
+		return self.uvIntensity
+		
+	def getLastUVIndex(self):
+		return self.uvIntensity
+		
+	def getbmp_180sda(self):
+		value = self.board.analogRead(self.pin_bmpsda)
+		return value
+	
+	def getbmp_180sdl(self):
+		value = self.board.analogRead(self.pin_bmpsdl)
+		return value	
 
 if __name__ == '__main__':
 	print "This is module - it sould not be executed itself..."
