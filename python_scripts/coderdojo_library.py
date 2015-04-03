@@ -46,8 +46,8 @@ class CoderDojoGalileo(object):
 		self.pin_photoresistor = 15   # A1
 		self.pin_uvout = 16			  # A2 - DA
 		self.pin_reference3v = 17	  # A3 - DL
-		self.pin_bmpsda = 18		  # A4 - DA
-		self.pin_bmpsdl = 19		  # A5 - DL
+		self.pin_humanidity = 18		  # A4 - DA
+		self.pin_pressure = 19		  # A5 - DL
 		self.pin_digital_A = 4
 		self.pin_digital_B = 7
 		self.pin_digital_C = 8
@@ -55,8 +55,8 @@ class CoderDojoGalileo(object):
 		self.raw_temperature = 0 # in mV
 		self.photoresistor = 0
 		self.uvIntensity = 0 # UV/cm2
-		self.bmp180_temperature = 0
-		self.bmp180_pressure = 0
+		self.humanidity = 0
+		self.pressure = 0
 		# now we will set all analog pins as INPUT
 		for pinA in range(14,20):
 			self.board.pinMode(pinA, self.board.ANALOG_INPUT)
@@ -125,13 +125,13 @@ class CoderDojoGalileo(object):
 	def getLastUVIndex(self):
 		return self.uvIntensity
 		
-	def getbmp_180sda(self):
-		value = self.board.analogRead(self.pin_bmpsda)
-		return value
+	def getHumanidity(self):
+		self.humanidity = self.board.analogRead(self.pin_humanidity)
+		return self.humanidity
 	
-	def getbmp_180sdl(self):
-		value = self.board.analogRead(self.pin_bmpsdl)
-		return value	
+	def getPressure(self):
+		self.pressure = self.board.analogRead(self.pin_pressure)
+		return self.pressure
 
 if __name__ == '__main__':
 	print "This is module - it sould not be executed itself..."
