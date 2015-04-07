@@ -63,7 +63,7 @@ rrdtool create  ${DB} \
   DS:temperature:GAUGE:1200:-44:155 \
   DS:uvindex:GAUGE:1200:0:200 \
   DS:pressure:GAUGE:1200:0:1100 \
-  DS:humanidity:GAUGE:1200:0:100 \
+  DS:humidity:GAUGE:1200:0:100 \
   DS:rainintensity:GAUGE:1200:0:100 \
   RRA:AVERAGE:0.5:1:288 \
   RRA:AVERAGE:0.5:3:672 \

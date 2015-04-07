@@ -21,10 +21,10 @@
  DEF:cel=/opt/weather_station.rrd:pressure:AVERAGE
  LINE2:cel#00a000:"Pressure in kPa">
  
- # humanidity
- <RRD::GRAPH /var/www/humanidity.png --lazy --title="Humanidity"
- DEF:cel=/opt/weather_station.rrd:humanidity:AVERAGE
- LINE2:cel#00a000:"humanidity in %">
+ # humidity
+ <RRD::GRAPH /var/www/humidity.png --lazy --title="Humanidity"
+ DEF:cel=/opt/weather_station.rrd:humidity:AVERAGE
+ LINE2:cel#00a000:"humidity in %">
  
  # rainintensity
  <RRD::GRAPH /var/www/rainintensity.png --lazy --title="Density of rain"
@@ -38,8 +38,8 @@ Light density:<br>
 <IMG SRC="/uvindex.png" WIDTH="531" HEIGHT="203"><br>
 Ppressure:<br>
 <IMG SRC="/pressure.png" WIDTH="531" HEIGHT="203"><br>
-humanidity:<br>
-<IMG SRC="/humanidity.png" WIDTH="531" HEIGHT="203"><br>
+humidity:<br>
+<IMG SRC="/humidity.png" WIDTH="531" HEIGHT="203"><br>
 Intensity of Rain:<br>
 <IMG SRC="/rainintensity.png" WIDTH="531" HEIGHT="203"><br>
 </BODY>

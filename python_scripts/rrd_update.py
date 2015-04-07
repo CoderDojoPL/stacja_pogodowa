@@ -19,7 +19,7 @@ if __name__ == '__main__':
 	a = GalileoBoard.getTemperature()
 	b = GalileoBoard.getUVIndex()
 	c = GalileoBoard.getPressure()
-	d = GalileoBoard.getHumanidity()
+	d = GalileoBoard.getHumidity()
 	e = GalileoBoard.getRainIntensity()
 	rrd_update('/opt/weather_station.rrd', 'N:' + str(a)+':' + str(b)+':' + str(c)+':' + str(d)+':' + str(e) );
 

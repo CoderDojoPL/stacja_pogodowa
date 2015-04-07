@@ -45,7 +45,7 @@ class CoderDojoGalileo(object):
 		self.pin_temperature = 14     # A0
 		self.pin_uvout = 15			  # A1
 		self.pin_reference3v = 16	  # A2
-		self.pin_humanidity = 17	  # A3
+		self.pin_humidity = 17	  # A3
 		self.pin_pressure = 18		  # A4 - DL
 		self.pin_rain_analog = 19	  # A5
 		self.pin_rain_digital = 2	  # digital 2 - rain is....
@@ -54,7 +54,7 @@ class CoderDojoGalileo(object):
 		self.pin_digital_C = 8
 		self.temperature = 0
 		self.uvIntensity = 0 # UV/cm2
-		self.humanidity = 0
+		self.humidity = 0
 		self.rawhumanidity = 0
 		self.pressure = 0
 		self.rain_intensity = 0
@@ -123,14 +123,14 @@ class CoderDojoGalileo(object):
 	def getLastUVIndex(self):
 		return self.uvIntensity
 		
-	def getHumanidity(self):
-		value = self.board.analogRead(self.pin_humanidity)
-		self.humanidity = round(value * 0.2 ,2) # change read to %
-		return self.humanidity # in %
+	def getHumidity(self):
+		value = self.board.analogRead(self.pin_humidity)
+		self.humidity = round(value * 0.2 ,2) # change read to %
+		return self.humidity # in %
 	
-	def getRawHumanidity(self):
-		self.rawhumanidity = self.board.analogRead(self.pin_humanidity)
-		return self.rawhumanidity
+	def getRawHumidity(self):
+		self.rawhumidity = self.board.analogRead(self.pin_humidity)
+		return self.rawhumidity
 	
 	def getPressure(self):
 		self.pressure = self.board.analogRead(self.pin_pressure)
