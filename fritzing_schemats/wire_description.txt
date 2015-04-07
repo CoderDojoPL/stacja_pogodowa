@@ -1,0 +1,21 @@
+# overwiew of wiring - how to connect each of sensor....
+####################
+
+Because we will use sensors, which are powered by different current (3,5 and 5 Volts), so we need some description.
+
+Analog inputs:
+* MCP9700 	- temperature: A0 analog input (pink)
+* ML8511	- UV : A1 - UV out / A2 - reference current 3,5 V
+* HIH-4000-002	- Humidity: A3
+* MPX5010DP	- pressure: A4 (we use only 3 pins: 1 - A4, 2 - Ground, 3 - 5V current)
+* YL83		- rain: A5 (4 pins from left: 1 VC Input, 2 GND, 3 - Digital, 4 - Analog )
+
+Current outputs:
+3,5 Volt 	- source to 3 sensors, lower line - Yellow color
+5 Volts		- source to , upper line - Red color
+Groud_upper	- ground black for sensors connections
+Ground_lower	- ground black for digital connections
+
+
+
+

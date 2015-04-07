@@ -43,25 +43,28 @@ class CoderDojoGalileo(object):
 	def __init__(self):
 		self.board = GPIO()
 		self.pin_temperature = 14     # A0
-		self.pin_photoresistor = 15   # A1
-		self.pin_uvout = 16			  # A2 - DA
-		self.pin_reference3v = 17	  # A3 - DL
-		self.pin_humanidity = 18		  # A4 - DA
-		self.pin_pressure = 19		  # A5 - DL
+		self.pin_uvout = 15			  # A1
+		self.pin_reference3v = 16	  # A2
+		self.pin_humanidity = 17	  # A3
+		self.pin_pressure = 18		  # A4 - DL
+		self.pin_rain_analog = 19	  # A5
+		self.pin_rain_digital = 2	  # digital 2 - rain is....
 		self.pin_digital_A = 4
 		self.pin_digital_B = 7
 		self.pin_digital_C = 8
 		self.temperature = 0
-		self.raw_temperature = 0 # in mV
-		self.photoresistor = 0
 		self.uvIntensity = 0 # UV/cm2
 		self.humanidity = 0
+		self.rawhumanidity = 0
 		self.pressure = 0
+		self.rain_intensity = 0
 		# now we will set all analog pins as INPUT
 		for pinA in range(14,20):
 			self.board.pinMode(pinA, self.board.ANALOG_INPUT)
+		# now setting pin 2 as INPUT for rain detection
+		self.board.pinMode(2, self.board.INPUT)
 		# now wi will light OFF all the possible digital leds
-		for pinX in range(1,14):
+		for pinX in range(3,14):
 			self.board.pinMode(pinX, self.board.OUTPUT)
 			self.board.digitalWrite(pinX, self.board.LOW)
 			
@@ -86,20 +89,15 @@ class CoderDojoGalileo(object):
 	def getTemperature(self):
 		value = self.board.analogRead(self.pin_temperature)
 		self.temperature = round ( ( ( ( value * 5 / 1024.0 ) - 0.5 ) / 0.01 ), 2 )
-		self.raw_temperature = value
 		return self.temperature
+	
+	def getRawTemperature(self):
+		self.raw_temperature = self.board.analogRead(self.pin_temperature)
+		return self.raw_temperature	
 		
 	def getLastTemperature(self):
 		return self.temperature
 
-	def getPhotoresistor(self):
-		value = self.board.analogRead(self.pin_photoresistor)
-		self.photoresistor = value
-		return value
-		
-	def getLastPhotoresistor(self):
-		return self.photoresistor
-		
 	def getUVIndex(self):
 		
 		def averageAnalogRead(pin,avg=9):
@@ -126,12 +124,21 @@ class CoderDojoGalileo(object):
 		return self.uvIntensity
 		
 	def getHumanidity(self):
-		self.humanidity = self.board.analogRead(self.pin_humanidity)
-		return self.humanidity
+		value = self.board.analogRead(self.pin_humanidity)
+		self.humanidity = round(value * 0.2 ,2) # change read to %
+		return self.humanidity # in %
+	
+	def getRawHumanidity(self):
+		self.rawhumanidity = self.board.analogRead(self.pin_humanidity)
+		return self.rawhumanidity
 	
 	def getPressure(self):
 		self.pressure = self.board.analogRead(self.pin_pressure)
 		return self.pressure
+	
+	def getRainIntensity(self):
+		self.rain_intensity = self.board.analogRead(self.pin_rain_analog)
+		return self.rain_intensity
 
 if __name__ == '__main__':
 	print "This is module - it sould not be executed itself..."

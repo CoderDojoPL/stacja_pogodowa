@@ -16,11 +16,13 @@ from coderdojo_library import *
 
 if __name__ == '__main__':
 	GalileoBoard = CoderDojoGalileo()
-	GalileoBoard.ledB_ON()
-	temperature = GalileoBoard.getTemperature()
-	photo = GalileoBoard.getPhotoresistor()
-	rrd_update('/opt/weather_station.rrd', 'N:' + str(temperature)+':'+str(photo));
-	GalileoBoard.ledB_OFF()
+	a = GalileoBoard.getTemperature()
+	b = GalileoBoard.getUVIndex()
+	c = GalileoBoard.getPressure()
+	d = GalileoBoard.getHumanidity()
+	e = GalileoBoard.getRainIntensity()
+	rrd_update('/opt/weather_station.rrd', 'N:' + str(a)+':' + str(b)+':' + str(c)+':' + str(d)+':' + str(e) );
+
 
 
 

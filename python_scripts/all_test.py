@@ -39,25 +39,26 @@ if __name__ == '__main__':
 	# create object of our BOARD.....
 	GalileoBoard = CoderDojoGalileo()
 	# turn ON led B
+	idx = 0
 	while True:
-		GalileoBoard.ledA_ON()
+		idx += 1
 		# read temperature from MCP9700 
-		o1 = GalileoBoard.getPhotoresistor()
-		o0 = GalileoBoard.getTemperature()
-		o2 = GalileoBoard.getUVIndex()
-		o3 = GalileoBoard.getPressure()
-		o4 = GalileoBoard.getHumanidity()
-		hum_percent = ( o4 * 100 ) / 1023.0
+		a = GalileoBoard.getTemperature()
+		b = GalileoBoard.getUVIndex()
+		c = GalileoBoard.getPressure()
+		d = GalileoBoard.getRawHumanidity()
+		dp = GalileoBoard.getHumanidity()
+		e = GalileoBoard.getRainIntensity()
 		# wait half a second
-		print "Photoresisor : "+ str(o1) # + " sdl: "+ str(sdl)
-		print "Temperature : "+ str(o0)
-		print "UVIndex : " + str(o2)
-		print "Pressure : " + str(o3)
-		print "Humanidity: " + str(o4) + " = " + str(hum_percent) + " %"
+		print "index: " + str(idx)
+		print "Temperature : "+ str(a) + " | raw: " + str(GalileoBoard.getRawTemperature())
+		print "UVIndex : " + str(b)
+		print "Pressure : " + str(c)
+		print "Humanidity: " + str(d) + " - " + str(dp) + " %"
+		print "Rain intensity: "+str(e)
 		print "----------------------------------------------------"
 		time.sleep(1)
 		# turn OFF led B
-		GalileoBoard.ledA_OFF()
-		time.sleep(0.5)
+	
 	
 
