@@ -18,8 +18,8 @@ if __name__ == '__main__':
 	GalileoBoard = CoderDojoGalileo()
 	a = GalileoBoard.getTemperature()
 	b = GalileoBoard.getUVIndex()
-	c = GalileoBoard.getPressure()
-	d = GalileoBoard.getHumidity()
+	c = GalileoBoard.getHumidity()
+	d = GalileoBoard.getPressure()
 	e = GalileoBoard.getRainIntensity()
 	rrd_update('/opt/weather_station.rrd', 'N:' + str(a)+':' + str(b)+':' + str(c)+':' + str(d)+':' + str(e) );
 

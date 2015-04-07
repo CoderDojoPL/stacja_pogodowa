@@ -16,15 +16,15 @@
  DEF:cel=/opt/weather_station.rrd:uvindex:AVERAGE
  LINE2:cel#00a000:"Light in index of mV">
  
- # pressure
- <RRD::GRAPH /var/www/pressure.png --lazy --title="Pressure"
- DEF:cel=/opt/weather_station.rrd:pressure:AVERAGE
- LINE2:cel#00a000:"Pressure in kPa">
- 
  # humidity
  <RRD::GRAPH /var/www/humidity.png --lazy --title="Humanidity"
  DEF:cel=/opt/weather_station.rrd:humidity:AVERAGE
  LINE2:cel#00a000:"humidity in %">
+ 
+ # pressure
+ <RRD::GRAPH /var/www/pressure.png --lazy --title="Pressure"
+ DEF:cel=/opt/weather_station.rrd:pressure:AVERAGE
+ LINE2:cel#00a000:"Pressure in kPa">
  
  # rainintensity
  <RRD::GRAPH /var/www/rainintensity.png --lazy --title="Density of rain"
@@ -36,10 +36,10 @@ Temperature:<br>
 <IMG SRC="/temperature.png" WIDTH="531" HEIGHT="203"><br>
 Light density:<br>
 <IMG SRC="/uvindex.png" WIDTH="531" HEIGHT="203"><br>
-Ppressure:<br>
-<IMG SRC="/pressure.png" WIDTH="531" HEIGHT="203"><br>
 humidity:<br>
 <IMG SRC="/humidity.png" WIDTH="531" HEIGHT="203"><br>
+Ppressure:<br>
+<IMG SRC="/pressure.png" WIDTH="531" HEIGHT="203"><br>
 Intensity of Rain:<br>
 <IMG SRC="/rainintensity.png" WIDTH="531" HEIGHT="203"><br>
 </BODY>

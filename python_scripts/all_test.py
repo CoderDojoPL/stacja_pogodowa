@@ -45,16 +45,16 @@ if __name__ == '__main__':
 		# read temperature from MCP9700 
 		a = GalileoBoard.getTemperature()
 		b = GalileoBoard.getUVIndex()
-		c = GalileoBoard.getPressure()
-		d = GalileoBoard.getRawHumanidity()
-		dp = GalileoBoard.getHumanidity()
+		c = GalileoBoard.getRawHumidity()
+		cp = GalileoBoard.getHumidity()
+		d = GalileoBoard.getPressure()
 		e = GalileoBoard.getRainIntensity()
 		# wait half a second
 		print "index: " + str(idx)
 		print "Temperature : "+ str(a) + " | raw: " + str(GalileoBoard.getRawTemperature())
 		print "UVIndex : " + str(b)
-		print "Pressure : " + str(c)
-		print "Humanidity: " + str(d) + " - " + str(dp) + " %"
+		print "Humidity: " + str(c) + " - " + str(cp) + " %"
+		print "Pressure : " + str(d)
 		print "Rain intensity: "+str(e)
 		print "----------------------------------------------------"
 		time.sleep(1)
