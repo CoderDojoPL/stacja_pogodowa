@@ -11,3 +11,11 @@ Lessons fo our project:
 4) Simple LED connections on Board
 
 5) my first Python Script
+
+6) Scripts in python for weather station
+
+7) wired connecting on breadboard
+
+8) running scripts, setting rrd database
+
+9) running and testing
