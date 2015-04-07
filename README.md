@@ -7,8 +7,6 @@
 * MCP9700 ( temperature from -40 to +150 )
 http://starter-kit.nettigo.eu/2010/how-to-measure-temperature-with-arduino-and-mcp9700/
 
-* GL5537-1 ( photoresistor ) 
-
 * ML8511 - analog UV sensor
 Simple to connect and write software....
 https://learn.sparkfun.com/tutorials/ml8511-uv-sensor-hookup-guide/using-the-ml8511
