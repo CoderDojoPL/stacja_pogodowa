@@ -16,6 +16,14 @@ https://learn.sparkfun.com/tutorials/ml8511-uv-sensor-hookup-guide/using-the-ml8
 * Pressure sensor MPX5010DP
 https://www.piekarz.pl/pl/?item=31675
 
+How many MPa in 1 mmHg? The answer is 0.00013332239.
+We assume you are converting between megapascal and millimeter of mercury [0 °C].
+The SI derived unit for pressure is the pascal.
+1 pascal is equal to 1.0E-6 MPa, or 0.00750061561303 mmHg.
+
+
+
+
 * Humidity sensor HIH-4000-002
 https://www.piekarz.pl/pl/?item=40413
 
