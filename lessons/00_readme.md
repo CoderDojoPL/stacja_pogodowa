@@ -8,9 +8,9 @@ Lessons fo our project:
 
 3) Software installing and configuring on Debian
 
-4) Simple LED connections on Board
+4) my first Python Script
 
-5) my first Python Script
+5) Simple LED connections on Board
 
 6) Scripts in python for weather station
 
@@ -18,4 +18,3 @@ Lessons fo our project:
 
 8) running scripts, setting rrd database
 
-9) running and testing

@@ -1,0 +1,7 @@
+Scripts for our project:
+
+all_tests.py - shows values of sensors in real time
+
+rrd_update.py - Updates RRD database from system cron table (/etc/crontab)
+
+In this lesson studens can look at the code and discuss - to imagine, what the code does

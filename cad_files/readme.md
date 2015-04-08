@@ -4,3 +4,6 @@ The system is heavily based on the VCG library developed at the Visual Computing
 This project is actively supported by the 3D-CoForm project. 
 
 Project homepage: http://meshlab.sourceforge.net/
+
+3D project: http://www.thingiverse.com/thing:231507/#files
+Intel Galileo enclosure by bubbasnow is licensed under the Creative Commons - Attribution - Share Alike license.

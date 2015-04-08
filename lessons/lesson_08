@@ -1,0 +1,8 @@
+* create RRD database with script rrd_db/01_create_rrd.sh 
+
+* make changes to /etc/crontab
+
+* test everything with all_tests.py
+
+* restart and observe if datas are stored in RDD (02_rrd_dump.sh generates XML output in /tmp)
+

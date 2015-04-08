@@ -1,0 +1,20 @@
+Login into Galileo Debian with ssh:
+
+* ssh -C root@_ip_of_galileo_
+
+Edit simple script with command: 
+* jed script.py
+
+#!/usr/bin/env python
+#
+counter = 0
+while counter<6:
+	counter += 1
+	print "This is : " + str(counter) + " step..."
+print "I'm done ;-)"
+
+
+Execute with command:
+* python script.py
+
+In this lesson students should learn main rules of how to write python scripts, how to execute them

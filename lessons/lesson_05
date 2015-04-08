@@ -1,0 +1,7 @@
+Simple LED connection :
+
+* simple_led.fzz in Fritzing schemats
+
+* simple_led.py in python_scripts
+
+In this lesson everyone should learn how to connect simple wires and program LED using coedrdojo library

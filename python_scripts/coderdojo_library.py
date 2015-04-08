@@ -49,9 +49,9 @@ class CoderDojoGalileo(object):
 		self.pin_pressure = 18		  # A4 - DL
 		self.pin_rain_analog = 19	  # A5
 		self.pin_rain_digital = 2	  # digital 2 - rain is....
-		self.pin_digital_A = 4
-		self.pin_digital_B = 7
-		self.pin_digital_C = 8
+		self.pin_digital_A = 2
+		self.pin_digital_B = 4
+		self.pin_digital_C = 7
 		self.temperature = 0
 		self.uvIntensity = 0 # UV/cm2
 		self.humidity = 0

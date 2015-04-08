@@ -1,0 +1,5 @@
+Linux installation on Galileo
+
+In file system_image/readme.txt there is a description how to prepare system on SD Card.
+
+After that /deb_prepare.txt file, deb_install.sh and pygalileo_install.sh.
