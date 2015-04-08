@@ -67,6 +67,9 @@ class CoderDojoGalileo(object):
 		for pinX in range(3,14):
 			self.board.pinMode(pinX, self.board.OUTPUT)
 			self.board.digitalWrite(pinX, self.board.LOW)
+	
+	def __str__(self):
+		print "Object to read sensors - for CoderDojo by Adam Jurkiewicz"
 			
 	def ledA_ON(self):
 		self.board.digitalWrite(self.pin_digital_A, self.board.HIGH)
@@ -137,7 +140,9 @@ class CoderDojoGalileo(object):
 		return self.pressure
 	
 	def getRainIntensity(self):
-		self.rain_intensity = self.board.analogRead(self.pin_rain_analog)
+		raw_value = self.board.analogRead(self.pin_rain_analog)
+		to_compute = 515 - raw_value   # 515 is the highest value == 0%, total dry
+		self.rain_intensity = round(to_compute/5.15,2) # 5.15 is 1% of rain intensity
 		return self.rain_intensity
 
 if __name__ == '__main__':
