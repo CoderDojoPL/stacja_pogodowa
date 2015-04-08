@@ -23,14 +23,24 @@
 #  
 
 import pyjsonrpc
+import sys, time, datetime
+
+# importing special library for Galielo Project
+galileo_path = "/opt/";
+if galileo_path not in sys.path:
+    sys.path.append(galileo_path);
+from coderdojo_library import *
+####
 
 
 class RequestHandler(pyjsonrpc.HttpRequestHandler):
 
   @pyjsonrpc.rpcmethod
-  def add(self, a, b):
-      """Test method"""
-      return a + b
+  def getTemperature(self):
+      """getting temperature"""
+      GalileoBoard = CoderDojoGalileo()
+      temp = GalileoBoard.getTemperature()
+      return temp
 
 
 # Threading HTTP-Server
