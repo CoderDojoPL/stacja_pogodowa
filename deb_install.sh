@@ -7,7 +7,7 @@
 apt-get update
 # remember to answer T (Yes) to install additional packages, which are needed
 # python specific packages 
-apt-get install python-pip python-flask ipython rrdtool python-rrdtool git python-smbus
+apt-get install python-pip python-flask ipython rrdtool python-rrdtool git python-smbus python-requests
 # webserver package
 apt-get install lighttpd 
 # system specyfic packages
