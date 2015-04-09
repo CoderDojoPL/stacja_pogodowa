@@ -23,7 +23,7 @@ if __name__ == '__main__':
 	e = GalileoBoard.getRainIntensity()
 	rrd_update('/opt/weather_station.rrd', 'N:' + str(a)+':' + str(b)+':' + str(c)+':' + str(d)+':' + str(e) );
 	# now create data and POST to OpenWeatherMap
-	wheather_data = {
+	weather_data = {
 	# Zambrów coordinates from http://dateandtime.info/citycoordinates.php?id=753895
 	'lat' : '52.9855000', # your lattitide
 	'long' : '22.2431900', # longitude
