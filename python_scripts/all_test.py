@@ -51,11 +51,11 @@ if __name__ == '__main__':
 		e = GalileoBoard.getRainIntensity()
 		# wait half a second
 		print "index: " + str(idx)
-		print "Temperature : "+ str(a) + " | raw: " + str(GalileoBoard.getRawTemperature())
-		print "UVIndex : " + str(b)
-		print "Humidity: " + str(c) + " - " + str(cp) + " %"
-		print "Pressure : " + str(d)
-		print "Rain intensity: "+str(e)
+		print "Temperature : "+ str(a) + " *C (Celcius degrees)"
+		print "UVIndex : " + str(b) + " mW/m2"
+		print "Humidity: " + str(cp) + " %"
+		print "Pressure : " + str(d) + " hPa"
+		print "Rain intensity: "+str(e) + " %"
 		print "----------------------------------------------------"
 		time.sleep(1)
 		# turn OFF led B

@@ -120,7 +120,7 @@ class CoderDojoGalileo(object):
 		# Convert the voltage to a UV intensity level
 		# based on information from tutorial:
 		# https://learn.sparkfun.com/tutorials/ml8511-uv-sensor-hookup-guide/using-the-ml8511
-		self.uvIntensity = mapfloat(outputVoltage, 0.99, 2.8, 0.0, 15.0)  
+		self.uvIntensity = round( mapfloat(outputVoltage, 0.99, 2.8, 0.0, 15.0)  ,2)
 		return self.uvIntensity
 		
 	def getLastUVIndex(self):
@@ -136,7 +136,13 @@ class CoderDojoGalileo(object):
 		return self.rawhumidity
 	
 	def getPressure(self):
-		self.pressure = self.board.analogRead(self.pin_pressure)
+		raw_value = self.board.analogRead(self.pin_pressure)
+		# reads from 0 = 15 kPa to 1023 = 115 kPa
+		# so 115-15 = 100, divided by 1023 = 0,097 kPA is 1 read on Analog input
+		# analog output shoud be about 4,59 mV / hPa
+		pressure_kpa = raw_value * 0.097 # (in kPA)
+		pressure_hpa = 150 + ( pressure_kpa * 10 )
+		self.pressure = round(pressure_hpa,2)
 		return self.pressure
 	
 	def getRainIntensity(self):
