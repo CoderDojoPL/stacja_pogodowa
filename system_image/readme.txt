@@ -34,3 +34,5 @@ You can also make this steps using GUI tools, steps (screenshots) are included.
 
 After this you should have got working debian distro named coderdojo-galileo on SD card.
 ( the boot process : https://www.youtube.com/watch?v=sMp18cqSXvc )
+
+Root password is: root ;-)

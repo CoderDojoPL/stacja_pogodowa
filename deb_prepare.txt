@@ -57,9 +57,9 @@ tmpfs            46M     0   46M   0% /run/shm
 tmpfs           114M     0  114M   0% /tmp
 /dev/mmcblk0p3  246M  6,1M  228M   3% /opt
 
+Root password is: root ;-)
 
 What you must do is:
 
 * install all neccesary software for our project ( deb_install.sh )
 
-* install pyGalileo library ( pygalileo_install.sh )

@@ -6,16 +6,17 @@
 #
 apt-get update
 # remember to answer T (Yes) to install additional packages, which are needed
+# system specyfic packages
+apt-get install lighttpd tree htop iftop iptraf vim-nox joe
 # python specific packages 
 apt-get install python-pip python-flask ipython rrdtool python-rrdtool git python-smbus python-requests
-# webserver package
-apt-get install lighttpd 
-# system specyfic packages
-apt-get install tree htop iftop iptraf vim-nox joe
 #
 # creating necessary lighttpd configuration, directories and change ownership to satisfy lighttpd
 # students can do it manually from hand or just execute this script
 # it is up to teacher ;-)
+echo "python JSON-RPC library"
+pip install python-jsonrpc
+echo "-------- links in web server config directory ---"
 mkdir -p /var/www/cgi-bin
 chown www-data.www-data /var/www/ -R
 chmod g+w /var/www/ -R
@@ -32,5 +33,4 @@ git clone https://github.com/emutex/wiring-x86.git
 cd wiring-x86
 python setup.py install
 echo "done."
-echo "python JSON-RPC library"
-pip install python-jsonrpc
+
