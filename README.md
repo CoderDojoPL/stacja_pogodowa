@@ -11,15 +11,9 @@ http://starter-kit.nettigo.eu/2010/how-to-measure-temperature-with-arduino-and-m
 Simple to connect and write software....
 https://learn.sparkfun.com/tutorials/ml8511-uv-sensor-hookup-guide/using-the-ml8511
 
-* Pressure sensor MPX5010DP
-https://www.piekarz.pl/pl/?item=31675
-
-How many MPa in 1 mmHg? The answer is 0.00013332239.
-We assume you are converting between megapascal and millimeter of mercury [0 °C].
-The SI derived unit for pressure is the pascal.
-1 pascal is equal to 1.0E-6 MPa, or 0.00750061561303 mmHg.
-
-
+* Pressure sensor MPX 41115A (From 15 to 115 kPa)
+http://www.tme.eu/pl/details/mpx4115a/czujniki-cisnienia/freescale-motorola/
+How many kPa in 1 mmHg? The answer is 0.13332239.
 
 
 * Humidity sensor HIH-4000-002

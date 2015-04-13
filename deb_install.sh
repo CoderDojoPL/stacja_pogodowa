@@ -29,7 +29,7 @@ echo "Lighttpd features enabled..."
 cd /root
 echo "wiring-x86 python library for coderdojo library"
 git clone https://github.com/emutex/wiring-x86.git
-cd wiring-x86.git
+cd wiring-x86
 python setup.py install
 echo "done."
 echo "python JSON-RPC library"
